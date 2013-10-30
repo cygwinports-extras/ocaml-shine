@@ -1,0 +1,17 @@
+inherit ocaml
+
+NAME="ocaml-shine"
+VERSION=0.1.1
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="OCaml libshine bindings"
+DESCRIPTION="OCaml bindings for the Shine fixed-point MP3 encoder library."
+HOMEPAGE="http://savonet.sourceforge.net/"
+SRC_URI="mirror://sourceforge/savonet/${NAME}-${VERSION}.tar.gz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygconf
+	cygmake -j1
+}
